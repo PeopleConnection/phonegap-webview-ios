@@ -9,7 +9,8 @@ this approach and why you might want to consider it.
 ### Quick Start Usage
 1. Add the following to your native iOS project Podfile to get this dependency from the CocoaPods registry:	
 		
-		pod 'phonegap-ios-template'	
+		pod 'Cordova'
+		pod 'phonegap-ios-template', :git => 'https://github.com/PeopleConnection/phonegap-webview-ios.git'
 	
 2. Install the pods referenced in the Podfile from the command line using the CocoaPods `pod` command:
 
