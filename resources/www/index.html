@@ -71,6 +71,8 @@
 	<script src="c2runtime.js"></script>
 
     <script>
+    	var num = "";
+        var cedu = "";
 		document.addEventListener("deviceready", function ()
 		{
 			window["c2iscordova"] = true;
@@ -78,17 +80,25 @@
 			// Create new runtime using the c2canvas
 			cr_createRuntime("c2canvas");
 
-			var success = function(d) {
+			var success1 = function(d) {
                                     console.log(d);
-                                    $("#c2canvasdiv input:text").val(d);
+                                  num = d;
                                   };
-                                  var fail = function(e) {
+                                  var fail1 = function(e) {
                                     console.log("no getPhone");
                                   }
+                                  var success2 = function(d) {
+                                  console.log(d);
+                                  cedu = d;
+                                  };
+                                  var fail2 = function(e) {
+                                  console.log("no getPhone");
+                                  }
                                   
-             setTimeout(function(){
-                 cordova.exec(success, fail, "UserInfoPlugin", "getPhone",[]);
-             },2000);
+             //setTimeout(function(){
+                 cordova.exec(success1, fail1, "UserInfoPlugin", "getPhone",[]);
+                 cordova.exec(success2, fail2, "UserInfoPlugin", "getId",[]);
+             //},2000);
 			
 			document.addEventListener("pause", function() {
 				cr_setSuspended(true);
